@@ -67,7 +67,7 @@ typedef enum {
     Err_other = 0xFF,//其他错误
 } ErrCode;
 
-//错误信息类
+//错误信息类 exception:标准库
 class SockException: public std::exception {
 public:
     SockException(ErrCode errCode = Err_success,
@@ -227,6 +227,7 @@ private:
     Mtx _mtx;
 };
 
+// 含virtual()=0纯虚函数 抽象类  抽象类不能被实例化只能由它派生子类 在派生类中对抽象类的函数定义 才具备函数功能 才可被调用
 class SockInfo {
 public:
     SockInfo() = default;

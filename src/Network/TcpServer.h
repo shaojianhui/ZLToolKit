@@ -353,7 +353,7 @@ private:
     Socket::onCreateSocket _on_create_socket;
     unordered_map<TcpSessionHelper *, TcpSessionHelper::Ptr> _session_map;
     function<TcpSessionHelper::Ptr(const TcpServer::Ptr &server, const Socket::Ptr &)> _session_alloc;
-    unordered_map<EventPoller *, Ptr> _cloned_server;
+    unordered_map<EventPoller *, Ptr> _cloned_server; // _cloned_server 无序map
 };
 
 } /* namespace toolkit */

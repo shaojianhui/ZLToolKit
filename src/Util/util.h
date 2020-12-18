@@ -37,6 +37,7 @@
 #endif
 #endif //__APPLE__
 
+// 类实例化
 #define INSTANCE_IMP(class_name, ...) \
 class_name &class_name::Instance() { \
     static std::shared_ptr<class_name> s_instance(new class_name(__VA_ARGS__)); \
