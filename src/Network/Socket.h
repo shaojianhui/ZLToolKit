@@ -83,7 +83,7 @@ public:
         _errMsg = errMsg;
         _errCode = errCode;
     }
-    //错误提示
+    //错误提示 noexcept:成若该函数不回抛出异常
     virtual const char* what() const noexcept {
         return _errMsg.c_str();
     }
@@ -91,7 +91,7 @@ public:
     ErrCode getErrCode() const {
         return _errCode;
     }
-    //判断是否真的有错
+    //判断是否真的有错 可直接判断对象 if(SockException)
     operator bool() const{
         return _errCode != Err_success;
     }
